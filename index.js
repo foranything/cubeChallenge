@@ -1,0 +1,10 @@
+var _ = require('lodash');
+var data = require('./input_data.json');
+var townXMax = _.maxBy(data.towns, function (town) { return town.position.x; });
+console.log('townXMax :', townXMax);
+var townYMax = _.maxBy(data.towns, function (town) { return town.position.y; });
+console.log('townYMax :', townYMax);
+var schoolXMax = _.maxBy(data.schools, function (school) { return school.position.x; });
+console.log('schoolXMax :', schoolXMax);
+var schoolYMax = _.maxBy(data.schools, function (school) { return school.position.y; });
+console.log('schoolYMax :', schoolYMax);
