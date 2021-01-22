@@ -1,10 +1,137 @@
-var _ = require('lodash');
-var data = require('./input_data.json');
-var townXMax = _.maxBy(data.towns, function (town) { return town.position.x; });
-console.log('townXMax :', townXMax);
-var townYMax = _.maxBy(data.towns, function (town) { return town.position.y; });
-console.log('townYMax :', townYMax);
-var schoolXMax = _.maxBy(data.schools, function (school) { return school.position.x; });
-console.log('schoolXMax :', schoolXMax);
-var schoolYMax = _.maxBy(data.schools, function (school) { return school.position.y; });
-console.log('schoolYMax :', schoolYMax);
+const connects = require("./distance.json");
+const fs = require("fs");
+
+const getRestConnectedOnSchool = (connects, key) => {
+  const filtered = connects.filter((c) => c.school === key);
+  const result =
+    filtered[0].capacity -
+    filtered.reduce((a, c) => a + (c.connection || 0), 0);
+  if (Number.isNaN(result)) throw "error";
+  return result;
+};
+
+const getRestConnectedOnTown = (connects, key) => {
+  const filtered = connects.filter((c) => c.town === key);
+  const result =
+    filtered[0].students -
+    filtered.reduce((a, c) => a + (c.connection || 0), 0);
+  if (Number.isNaN(result)) throw "error";
+  return result;
+};
+
+const getConnectLines = (connects) => {
+  return connects.reduce((a, c) => a + c.connection, 0);
+};
+
+///
+const connectArbitrary = (connects) => {
+  connects.forEach((connect) => {
+    connect.connection = Math.min(
+      getRestConnectedOnTown(connects, connect.town),
+      getRestConnectedOnSchool(connects, connect.school)
+    );
+  });
+};
+
+const calcNetDistance = (connects) => {
+  return connects.reduce((a, c) => a + c.distance * c.connection, 0);
+};
+
+const maxDistanceLine = (connects, school) => {
+  let filtered = connects.filter((c) => c.school === school);
+
+  let maxDistance = -Infinity;
+  let target;
+  filtered.forEach((connect) => {
+    if (connect.distance > maxDistance && connect.connection !== 0) {
+      maxDistance = connect.distance;
+      target = connect;
+    }
+  });
+  return target;
+};
+
+const minDistanceLine = (connects, town) => {
+  const filtered = connects.filter((connect) => connect.town === town);
+  let minDistance = Infinity;
+  let target;
+  filtered.forEach((connect) => {
+    if (connect.students <= connect.connection) {
+      return;
+    }
+    if (connect.distance < minDistance) {
+      minDistance = connect.distance;
+      target = connect;
+    }
+  });
+  return target;
+};
+
+const findTarget = (connects, school, town) => {
+  return connects.find(
+    (connect) => connect.school === school && connect.town === town
+  );
+};
+
+const maxNetDistanceLines = (connects) => {
+  let netDistance = -Infinity;
+  let target;
+  connects.forEach((c) => {
+    const cNet = c.connection * c.distance;
+    if (netDistance < cNet) {
+      netDistance = cNet;
+      target = c;
+    }
+  });
+  return target;
+};
+
+connectArbitrary(connects);
+//
+console.log(getConnectLines(connects));
+console.log(calcNetDistance(connects));
+
+const disconnectMax = (connects) => {
+  let max = maxNetDistanceLines(connects);
+  let alter = minDistanceLine(connects, max.town);
+  let rest = maxDistanceLine(connects, alter.school);
+  let rest2 = findTarget(connects, max.school, rest.town);
+  max.connection--;
+  alter.connection++;
+  rest.connection--;
+  rest2.connection++;
+};
+const ITER = 100000;
+for (let i = 0; i < ITER; i++) {
+  disconnectMax(connects);
+}
+console.log(getConnectLines(connects));
+console.log(calcNetDistance(connects));
+
+const result = {
+  schools: [],
+};
+
+connects.forEach((c) => {
+  let school = result.schools.find(
+    (school) => school.name === c.school.replace("_", "")
+  );
+  if (!school) {
+    school = {
+      name: c.school.replace("_", ""),
+      town_students: [],
+    };
+    result.schools.push(school);
+  }
+  school.town_students.push({
+    name: c.town.replace("_", ""),
+    students: c.connection,
+  });
+});
+
+fs.writeFile("result.json", JSON.stringify(result), (err) => {
+  if (err) {
+    console.log(err);
+  }
+  console.log("done");
+});
