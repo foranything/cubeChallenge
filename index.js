@@ -113,6 +113,9 @@ const result = {
 };
 
 connects.forEach((c) => {
+  if (!c.connection) {
+    return;
+  }
   let school = result.schools.find(
     (school) => school.name === c.school.replace("_", "")
   );
