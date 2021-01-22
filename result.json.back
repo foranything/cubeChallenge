@@ -1,0 +1,438 @@
+{
+  "schools": [
+    {
+      "name": "s1",
+      "town_students": [
+        { "name": "t11", "students": 1135 },
+        { "name": "t77", "students": 0 },
+        { "name": "t66", "students": 1062 },
+        { "name": "t12", "students": 0 },
+        { "name": "t24", "students": 0 },
+        { "name": "t46", "students": 768 },
+        { "name": "t38", "students": 0 },
+        { "name": "t6", "students": 0 },
+        { "name": "t70", "students": 320 },
+        { "name": "t93", "students": 0 },
+        { "name": "t86", "students": 0 }
+      ]
+    },
+    {
+      "name": "s2",
+      "town_students": [
+        { "name": "t57", "students": 670 },
+        { "name": "t39", "students": 114 },
+        { "name": "t29", "students": 1059 },
+        { "name": "t73", "students": 437 },
+        { "name": "t85", "students": 838 }
+      ]
+    },
+    {
+      "name": "s3",
+      "town_students": [
+        { "name": "t88", "students": 0 },
+        { "name": "t55", "students": 0 },
+        { "name": "t44", "students": 285 },
+        { "name": "t77", "students": 0 },
+        { "name": "t23", "students": 646 },
+        { "name": "t47", "students": 0 },
+        { "name": "t27", "students": 1035 },
+        { "name": "t49", "students": 973 },
+        { "name": "t28", "students": 0 },
+        { "name": "t6", "students": 908 },
+        { "name": "t82", "students": 0 },
+        { "name": "t94", "students": 0 },
+        { "name": "t95", "students": 0 },
+        { "name": "t62", "students": 0 },
+        { "name": "t40", "students": 0 },
+        { "name": "t52", "students": 746 }
+      ]
+    },
+    {
+      "name": "s4",
+      "town_students": [
+        { "name": "t44", "students": 0 },
+        { "name": "t68", "students": 0 },
+        { "name": "t37", "students": 0 },
+        { "name": "t16", "students": 0 },
+        { "name": "t100", "students": 266 },
+        { "name": "t3", "students": 439 },
+        { "name": "t7", "students": 1195 },
+        { "name": "t91", "students": 0 },
+        { "name": "t80", "students": 1074 },
+        { "name": "t82", "students": 0 },
+        { "name": "t94", "students": 0 },
+        { "name": "t97", "students": 734 },
+        { "name": "t86", "students": 0 }
+      ]
+    },
+    {
+      "name": "s5",
+      "town_students": [
+        { "name": "t99", "students": 648 },
+        { "name": "t77", "students": 34 },
+        { "name": "t34", "students": 460 },
+        { "name": "t23", "students": 285 },
+        { "name": "t57", "students": 0 },
+        { "name": "t68", "students": 503 },
+        { "name": "t17", "students": 1312 },
+        { "name": "t28", "students": 459 },
+        { "name": "t8", "students": 76 }
+      ]
+    },
+    {
+      "name": "s6",
+      "town_students": [
+        { "name": "t66", "students": 0 },
+        { "name": "t77", "students": 0 },
+        { "name": "t89", "students": 0 },
+        { "name": "t56", "students": 96 },
+        { "name": "t79", "students": 0 },
+        { "name": "t24", "students": 680 },
+        { "name": "t15", "students": 9 },
+        { "name": "t5", "students": 1061 },
+        { "name": "t90", "students": 78 },
+        { "name": "t31", "students": 922 },
+        { "name": "t54", "students": 1234 }
+      ]
+    },
+    {
+      "name": "s7",
+      "town_students": [
+        { "name": "t77", "students": 0 },
+        { "name": "t12", "students": 0 },
+        { "name": "t89", "students": 0 },
+        { "name": "t24", "students": 0 },
+        { "name": "t59", "students": 1208 },
+        { "name": "t37", "students": 0 },
+        { "name": "t6", "students": 0 },
+        { "name": "t70", "students": 540 },
+        { "name": "t41", "students": 846 },
+        { "name": "t87", "students": 1177 }
+      ]
+    },
+    {
+      "name": "s8",
+      "town_students": [
+        { "name": "t24", "students": 0 },
+        { "name": "t59", "students": 0 },
+        { "name": "t18", "students": 1093 },
+        { "name": "t70", "students": 0 },
+        { "name": "t71", "students": 1235 },
+        { "name": "t41", "students": 0 },
+        { "name": "t86", "students": 804 },
+        { "name": "t76", "students": 909 },
+        { "name": "t87", "students": 0 }
+      ]
+    },
+    {
+      "name": "s9",
+      "town_students": [
+        { "name": "t55", "students": 601 },
+        { "name": "t99", "students": 0 },
+        { "name": "t68", "students": 328 },
+        { "name": "t14", "students": 0 },
+        { "name": "t3", "students": 628 },
+        { "name": "t8", "students": 215 },
+        { "name": "t92", "students": 0 },
+        { "name": "t72", "students": 895 },
+        { "name": "t94", "students": 740 },
+        { "name": "t64", "students": 808 }
+      ]
+    },
+    {
+      "name": "s10",
+      "town_students": [
+        { "name": "t22", "students": 926 },
+        { "name": "t44", "students": 0 },
+        { "name": "t100", "students": 707 },
+        { "name": "t16", "students": 0 },
+        { "name": "t7", "students": 0 },
+        { "name": "t20", "students": 1063 },
+        { "name": "t75", "students": 1211 }
+      ]
+    },
+    {
+      "name": "s11",
+      "town_students": [
+        { "name": "t44", "students": 0 },
+        { "name": "t77", "students": 0 },
+        { "name": "t13", "students": 965 },
+        { "name": "t37", "students": 0 },
+        { "name": "t28", "students": 0 },
+        { "name": "t2", "students": 0 },
+        { "name": "t4", "students": 0 },
+        { "name": "t6", "students": 0 },
+        { "name": "t91", "students": 0 },
+        { "name": "t83", "students": 449 },
+        { "name": "t62", "students": 0 },
+        { "name": "t43", "students": 1285 },
+        { "name": "t98", "students": 788 }
+      ]
+    },
+    {
+      "name": "s12",
+      "town_students": [
+        { "name": "t44", "students": 0 },
+        { "name": "t100", "students": 0 },
+        { "name": "t35", "students": 801 },
+        { "name": "t16", "students": 0 },
+        { "name": "t80", "students": 0 },
+        { "name": "t61", "students": 705 },
+        { "name": "t84", "students": 731 },
+        { "name": "t51", "students": 866 }
+      ]
+    },
+    {
+      "name": "s13",
+      "town_students": [
+        { "name": "t99", "students": 174 },
+        { "name": "t68", "students": 416 },
+        { "name": "t14", "students": 1229 },
+        { "name": "t3", "students": 294 },
+        { "name": "t8", "students": 760 },
+        { "name": "t92", "students": 54 }
+      ]
+    },
+    {
+      "name": "s14",
+      "town_students": [
+        { "name": "t55", "students": 0 },
+        { "name": "t77", "students": 393 },
+        { "name": "t89", "students": 227 },
+        { "name": "t56", "students": 216 },
+        { "name": "t79", "students": 0 },
+        { "name": "t58", "students": 0 },
+        { "name": "t47", "students": 216 },
+        { "name": "t15", "students": 1230 },
+        { "name": "t90", "students": 906 },
+        { "name": "t52", "students": 409 },
+        { "name": "t54", "students": 105 }
+      ]
+    },
+    {
+      "name": "s15",
+      "town_students": [
+        { "name": "t77", "students": 0 },
+        { "name": "t12", "students": 1375 },
+        { "name": "t46", "students": 0 },
+        { "name": "t24", "students": 0 },
+        { "name": "t37", "students": 409 },
+        { "name": "t60", "students": 0 },
+        { "name": "t40", "students": 489 },
+        { "name": "t62", "students": 0 }
+      ]
+    },
+    {
+      "name": "s16",
+      "town_students": [
+        { "name": "t77", "students": 0 },
+        { "name": "t66", "students": 0 },
+        { "name": "t89", "students": 0 },
+        { "name": "t46", "students": 0 },
+        { "name": "t24", "students": 197 },
+        { "name": "t79", "students": 1098 },
+        { "name": "t26", "students": 1108 },
+        { "name": "t37", "students": 628 },
+        { "name": "t70", "students": 20 },
+        { "name": "t86", "students": 116 }
+      ]
+    },
+    {
+      "name": "s17",
+      "town_students": [
+        { "name": "t55", "students": 327 },
+        { "name": "t1", "students": 969 },
+        { "name": "t59", "students": 0 },
+        { "name": "t19", "students": 917 },
+        { "name": "t30", "students": 915 },
+        { "name": "t41", "students": 0 }
+      ]
+    },
+    {
+      "name": "s18",
+      "town_students": [
+        { "name": "t44", "students": 0 },
+        { "name": "t100", "students": 0 },
+        { "name": "t81", "students": 1073 },
+        { "name": "t94", "students": 181 },
+        { "name": "t61", "students": 174 },
+        { "name": "t21", "students": 970 }
+      ]
+    },
+    {
+      "name": "s19",
+      "town_students": [
+        { "name": "t33", "students": 1240 },
+        { "name": "t99", "students": 0 },
+        { "name": "t55", "students": 0 },
+        { "name": "t77", "students": 371 },
+        { "name": "t45", "students": 850 },
+        { "name": "t58", "students": 0 },
+        { "name": "t47", "students": 0 },
+        { "name": "t82", "students": 77 },
+        { "name": "t94", "students": 0 },
+        { "name": "t40", "students": 472 }
+      ]
+    },
+    {
+      "name": "s20",
+      "town_students": [
+        { "name": "t77", "students": 0 },
+        { "name": "t13", "students": 0 },
+        { "name": "t37", "students": 0 },
+        { "name": "t6", "students": 226 },
+        { "name": "t28", "students": 714 },
+        { "name": "t50", "students": 1087 },
+        { "name": "t63", "students": 908 },
+        { "name": "t96", "students": 728 },
+        { "name": "t53", "students": 0 },
+        { "name": "t86", "students": 0 },
+        { "name": "t43", "students": 0 },
+        { "name": "t87", "students": 0 }
+      ]
+    },
+    {
+      "name": "s21",
+      "town_students": [
+        { "name": "t68", "students": 0 },
+        { "name": "t3", "students": 0 },
+        { "name": "t14", "students": 0 },
+        { "name": "t16", "students": 815 },
+        { "name": "t91", "students": 737 },
+        { "name": "t82", "students": 808 },
+        { "name": "t74", "students": 1040 },
+        { "name": "t64", "students": 0 }
+      ]
+    },
+    {
+      "name": "s22",
+      "town_students": [
+        { "name": "t99", "students": 268 },
+        { "name": "t67", "students": 1006 },
+        { "name": "t58", "students": 774 },
+        { "name": "t39", "students": 0 },
+        { "name": "t73", "students": 706 },
+        { "name": "t32", "students": 0 },
+        { "name": "t54", "students": 0 },
+        { "name": "t65", "students": 183 }
+      ]
+    },
+    {
+      "name": "s23",
+      "town_students": [
+        { "name": "t88", "students": 673 },
+        { "name": "t34", "students": 0 },
+        { "name": "t89", "students": 760 },
+        { "name": "t68", "students": 0 },
+        { "name": "t3", "students": 0 },
+        { "name": "t47", "students": 478 },
+        { "name": "t49", "students": 0 },
+        { "name": "t28", "students": 0 },
+        { "name": "t8", "students": 0 },
+        { "name": "t91", "students": 71 },
+        { "name": "t95", "students": 727 },
+        { "name": "t10", "students": 854 }
+      ]
+    },
+    {
+      "name": "s24",
+      "town_students": [
+        { "name": "t55", "students": 0 },
+        { "name": "t77", "students": 0 },
+        { "name": "t44", "students": 606 },
+        { "name": "t89", "students": 0 },
+        { "name": "t13", "students": 0 },
+        { "name": "t24", "students": 0 },
+        { "name": "t37", "students": 0 },
+        { "name": "t2", "students": 1474 },
+        { "name": "t4", "students": 0 },
+        { "name": "t6", "students": 0 },
+        { "name": "t70", "students": 0 },
+        { "name": "t83", "students": 0 },
+        { "name": "t40", "students": 0 },
+        { "name": "t42", "students": 0 },
+        { "name": "t53", "students": 1048 },
+        { "name": "t86", "students": 0 },
+        { "name": "t98", "students": 0 },
+        { "name": "t87", "students": 0 }
+      ]
+    },
+    {
+      "name": "s25",
+      "town_students": [
+        { "name": "t99", "students": 18 },
+        { "name": "t78", "students": 837 },
+        { "name": "t57", "students": 0 },
+        { "name": "t25", "students": 1357 },
+        { "name": "t36", "students": 1326 }
+      ]
+    },
+    {
+      "name": "s26",
+      "town_students": [
+        { "name": "t77", "students": 0 },
+        { "name": "t12", "students": 0 },
+        { "name": "t89", "students": 0 },
+        { "name": "t24", "students": 0 },
+        { "name": "t46", "students": 0 },
+        { "name": "t38", "students": 808 },
+        { "name": "t60", "students": 1201 },
+        { "name": "t93", "students": 706 },
+        { "name": "t40", "students": 130 },
+        { "name": "t86", "students": 0 }
+      ]
+    },
+    {
+      "name": "s27",
+      "town_students": [
+        { "name": "t33", "students": 0 },
+        { "name": "t99", "students": 34 },
+        { "name": "t55", "students": 0 },
+        { "name": "t45", "students": 0 },
+        { "name": "t58", "students": 315 },
+        { "name": "t39", "students": 838 },
+        { "name": "t65", "students": 837 },
+        { "name": "t32", "students": 953 }
+      ]
+    },
+    {
+      "name": "s28",
+      "town_students": [
+        { "name": "t69", "students": 501 },
+        { "name": "t9", "students": 1279 },
+        { "name": "t92", "students": 886 },
+        { "name": "t72", "students": 0 },
+        { "name": "t64", "students": 0 }
+      ]
+    },
+    {
+      "name": "s29",
+      "town_students": [
+        { "name": "t77", "students": 0 },
+        { "name": "t56", "students": 665 },
+        { "name": "t46", "students": 139 },
+        { "name": "t4", "students": 388 },
+        { "name": "t38", "students": 312 },
+        { "name": "t40", "students": 0 },
+        { "name": "t62", "students": 775 }
+      ]
+    },
+    {
+      "name": "s30",
+      "town_students": [
+        { "name": "t55", "students": 0 },
+        { "name": "t23", "students": 0 },
+        { "name": "t89", "students": 0 },
+        { "name": "t47", "students": 328 },
+        { "name": "t48", "students": 1025 },
+        { "name": "t4", "students": 629 },
+        { "name": "t27", "students": 0 },
+        { "name": "t28", "students": 16 },
+        { "name": "t83", "students": 429 },
+        { "name": "t62", "students": 0 },
+        { "name": "t40", "students": 0 },
+        { "name": "t42", "students": 887 }
+      ]
+    }
+  ]
+}

@@ -1,5 +1,7 @@
 const connects = require("./distance.json");
 const fs = require("fs");
+const saved = require("./result.json");
+let globalMin = +fs.readFileSync("./resultValue.txt", "utf8");
 
 const getRestConnectedOnSchool = (connects, key) => {
   const filtered = connects.filter((c) => c.school === key);
@@ -21,16 +23,6 @@ const getRestConnectedOnTown = (connects, key) => {
 
 const getConnectLines = (connects) => {
   return connects.reduce((a, c) => a + c.connection, 0);
-};
-
-///
-const connectArbitrary = (connects) => {
-  connects.forEach((connect) => {
-    connect.connection = Math.min(
-      getRestConnectedOnTown(connects, connect.town),
-      getRestConnectedOnSchool(connects, connect.school)
-    );
-  });
 };
 
 const calcNetDistance = (connects) => {
@@ -103,10 +95,25 @@ const shuffle = (connects) => {
   }
 };
 
-connectArbitrary(connects);
+const load = (connects, saved) => {
+  saved.schools.forEach((school) => {
+    school.town_students.forEach((ts) => {
+      findTarget(
+        connects,
+        `s_${school.name.slice(1)}`,
+        `t_${ts.name.slice(1)}`
+      ).connection = ts.students;
+    });
+  });
+  connects.forEach((c) => {
+    if (!c.connection) {
+      c.connection = 0;
+    }
+  });
+};
 
+load(connects, saved);
 //
-console.log(getConnectLines(connects));
 console.log(calcNetDistance(connects));
 
 const disconnectMax = (connects) => {
@@ -122,53 +129,74 @@ const disconnectMax = (connects) => {
   }
 };
 const shuffleAndRun = (connects) => {
+  let prev = 0;
   const ITER = 1000000;
+  console.log("shuffle");
   for (let i = 0; i < ITER; i++) {
+    if (i % 10000 === 0) {
+      const distance = calcNetDistance(connects);
+      console.log(distance);
+      if (globalMin > distance) {
+        save(connects, distance);
+      }
+    }
     shuffle(connects);
   }
+  console.log("disconnectMax");
   for (let i = 0; i < ITER; i++) {
+    if (i % 10000 === 0) {
+      if (prev === calcNetDistance(connects)) {
+        i = ITER;
+      }
+      prev = calcNetDistance(connects);
+      console.log(prev);
+      if (globalMin > prev) {
+        save(connects, prev);
+      }
+    }
     disconnectMax(connects);
   }
 };
 
-const ITER = 100;
+const save = (connects, net) => {
+  const result = {
+    schools: [],
+  };
+
+  connects.forEach((c) => {
+    if (!c.connection) {
+      return;
+    }
+    let school = result.schools.find(
+      (school) => school.name === c.school.replace("_", "")
+    );
+    if (!school) {
+      school = {
+        name: c.school.replace("_", ""),
+        town_students: [],
+      };
+      result.schools.push(school);
+    }
+    school.town_students.push({
+      name: c.town.replace("_", ""),
+      students: c.connection,
+    });
+  });
+  fs.writeFileSync("result.json", JSON.stringify(result));
+  fs.writeFileSync("resultValue.txt", String(net));
+  console.log("saved");
+};
+
+const ITER = 10000;
 for (let i = 0; i < ITER; i++) {
-  console.log(i)
+  console.log(i);
   shuffleAndRun(connects);
-  console.log(getConnectLines(connects));
-  console.log(calcNetDistance(connects));
+  const distance = calcNetDistance(connects);
+  if (globalMin > distance) {
+    console.log(distance);
+    save(connects, distance);
+  }
 }
 
 console.log(getConnectLines(connects));
 console.log(calcNetDistance(connects));
-
-const result = {
-  schools: [],
-};
-
-connects.forEach((c) => {
-  if (!c.connection) {
-    return;
-  }
-  let school = result.schools.find(
-    (school) => school.name === c.school.replace("_", "")
-  );
-  if (!school) {
-    school = {
-      name: c.school.replace("_", ""),
-      town_students: [],
-    };
-    result.schools.push(school);
-  }
-  school.town_students.push({
-    name: c.town.replace("_", ""),
-    students: c.connection,
-  });
-});
-
-fs.writeFile("result.json", JSON.stringify(result), (err) => {
-  if (err) {
-    console.log(err);
-  }
-  console.log("done");
-});
