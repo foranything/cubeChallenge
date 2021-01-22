@@ -121,19 +121,22 @@ const disconnectMax = (connects) => {
     rest2.connection++;
   }
 };
-let ITER = 1000000;
+const shuffleAndRun = (connects) => {
+  const ITER = 1000000;
+  for (let i = 0; i < ITER; i++) {
+    shuffle(connects);
+  }
+  for (let i = 0; i < ITER; i++) {
+    disconnectMax(connects);
+  }
+};
+
+const ITER = 100;
 for (let i = 0; i < ITER; i++) {
-  shuffle(connects);
-}
-for (let i = 0; i < ITER; i++) {
-  disconnectMax(connects);
-}
-for (let i = 0; i < ITER; i++) {
-  shuffle(connects);
-}
-ITER = 10000000;
-for (let i = 0; i < ITER; i++) {
-  disconnectMax(connects);
+  console.log(i)
+  shuffleAndRun(connects);
+  console.log(getConnectLines(connects));
+  console.log(calcNetDistance(connects));
 }
 
 console.log(getConnectLines(connects));
