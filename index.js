@@ -121,10 +121,17 @@ const disconnectMax = (connects) => {
     rest2.connection++;
   }
 };
-const ITER = 1000000;
+let ITER = 1000000;
 for (let i = 0; i < ITER; i++) {
   shuffle(connects);
 }
+for (let i = 0; i < ITER; i++) {
+  disconnectMax(connects);
+}
+for (let i = 0; i < ITER; i++) {
+  shuffle(connects);
+}
+ITER = 10000000;
 for (let i = 0; i < ITER; i++) {
   disconnectMax(connects);
 }
