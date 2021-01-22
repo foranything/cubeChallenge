@@ -86,7 +86,25 @@ const maxNetDistanceLines = (connects) => {
   return target;
 };
 
+const randN = (n) => {
+  return ~~(Math.random() * n + 1);
+};
+
+const shuffle = (connects) => {
+  let rand = findTarget(connects, `s_${randN(30)}`, `t_${randN(100)}`);
+  let alter = minDistanceLine(connects, rand.town);
+  let rest = maxDistanceLine(connects, alter.school);
+  let rest2 = findTarget(connects, rand.school, rest.town);
+  if (rand.connection && rest.connection) {
+    rand.connection--;
+    alter.connection++;
+    rest.connection--;
+    rest2.connection++;
+  }
+};
+
 connectArbitrary(connects);
+
 //
 console.log(getConnectLines(connects));
 console.log(calcNetDistance(connects));
@@ -96,15 +114,21 @@ const disconnectMax = (connects) => {
   let alter = minDistanceLine(connects, max.town);
   let rest = maxDistanceLine(connects, alter.school);
   let rest2 = findTarget(connects, max.school, rest.town);
-  max.connection--;
-  alter.connection++;
-  rest.connection--;
-  rest2.connection++;
+  if (max.connection && rest.connection) {
+    max.connection--;
+    alter.connection++;
+    rest.connection--;
+    rest2.connection++;
+  }
 };
-const ITER = 100000;
+const ITER = 1000000;
+for (let i = 0; i < ITER; i++) {
+  shuffle(connects);
+}
 for (let i = 0; i < ITER; i++) {
   disconnectMax(connects);
 }
+
 console.log(getConnectLines(connects));
 console.log(calcNetDistance(connects));
 
